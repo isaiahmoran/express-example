@@ -2,9 +2,11 @@
   "name": "express-example",
   "version": "1.0.0",
   "description": "Express microservice example",
-  "main": "app.js",
+  "main": "app.ts",
   "scripts": {
-    "test": "test"
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/app.js\""
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,14 @@
   },
   "homepage": "https://github.com/isaiahmoran/express-example#readme",
   "dependencies": {
+    "dotenv": "^16.0.1",
     "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^18.0.1",
+    "concurrently": "^7.2.2",
+    "nodemon": "^2.0.19",
+    "typescript": "^4.7.4"
   }
 }

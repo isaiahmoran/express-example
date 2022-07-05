@@ -1,0 +1,25 @@
+{
+  "name": "express-example",
+  "version": "1.0.0",
+  "description": "Express microservice example",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaiahmoran/express-example.git"
+  },
+  "keywords": [
+    "example"
+  ],
+  "author": "Isaiah Moran",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/isaiahmoran/express-example/issues"
+  },
+  "homepage": "https://github.com/isaiahmoran/express-example#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

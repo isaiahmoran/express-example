@@ -16,9 +16,7 @@
 import express from 'express'
 
 const router = express.Router()
-const  {
-    ping
-} = require('../controllers/ping')
+const  { ping } = require('../controllers/ping')
 
 
 /**

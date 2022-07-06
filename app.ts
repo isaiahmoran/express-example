@@ -3,13 +3,14 @@ import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import swaggerJsdoc from 'swagger-jsdoc'
 import swaggerUi from 'swagger-ui-express';
-import ping_routes from './src/routes/ping';
+import ping_routes from './src/routes/v1/ping';
 
 
 dotenv.config();
 
 const app: Express = express();
 const port = process.env.PORT;
+const api_root = process.env.API_ROOT;
 const options = {
     definition: {
         openapi: "3.0.0",
@@ -30,7 +31,7 @@ const options = {
         },
         servers: [
             {
-                url: "http://localhost:3000/",
+                url: `http://localhost:${port}/`,
             },
         ],
     },
@@ -51,4 +52,4 @@ app.listen(port, () => {
     console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
 });
 
-app.use('/api/v1', ping_routes)
+app.use(`/${api_root}/v1`, ping_routes)

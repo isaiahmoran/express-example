@@ -2,6 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: express-example-api
   namespace: default
   labels:
     app: express-example-api
@@ -27,6 +28,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  name: express-example-api
   annotations:
     cloud.google.com/neg: '{"ingress":true}'
   labels:

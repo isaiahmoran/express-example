@@ -1,0 +1,43 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+  namespace: default
+  labels:
+    app: express-example-api
+spec:
+  replicas: 3
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: express-example-api
+  template:
+    metadata:
+      labels:
+        app: express-example-api
+    spec:
+      containers:
+        - image: gcr.io/sandbox-for-isaiah/express-example-api:latest
+          imagePullPolicy: IfNotPresent
+          name: express-example-api
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    cloud.google.com/neg: '{"ingress":true}'
+  labels:
+    app: express-example-api
+spec:
+  ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: 3000
+  selector:
+    app: express-example-api
+  type: NodePort
+---

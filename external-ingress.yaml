@@ -3,9 +3,13 @@ kind: Ingress
 metadata:
   name: express-example-api-external-ingress
 spec:
-  defaultBackend:
-    service:
-      name: express-example-api
-      port:
-        number: 8080
----
+  rules:
+    - http:
+        paths:
+          - path: /express-example
+            pathType: Prefix
+            backend:
+              service:
+                name: express-example-api
+                port:
+                  number: 80

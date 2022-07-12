@@ -24,6 +24,9 @@ spec:
         - image: gcr.io/sandbox-for-isaiah/express-example-api:latest
           imagePullPolicy: IfNotPresent
           name: express-example-api
+          ports:
+            - containerPort: 8080
+              protocol: TCP
 ---
 apiVersion: v1
 kind: Service
@@ -35,7 +38,7 @@ metadata:
     app: express-example-api
 spec:
   ports:
-    - port: 8080
+    - port: 80
       protocol: TCP
       targetPort: 3000
   selector:

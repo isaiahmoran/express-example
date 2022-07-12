@@ -32,13 +32,11 @@ apiVersion: v1
 kind: Service
 metadata:
   name: express-example-api
-  annotations:
-    cloud.google.com/neg: '{"ingress":true}'
   labels:
     app: express-example-api
 spec:
   ports:
-    - port: 80
+    - port: 8080
       protocol: TCP
       targetPort: 3000
   selector:

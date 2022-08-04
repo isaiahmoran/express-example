@@ -22,7 +22,19 @@ spec:
     spec:
       containers:
         - image: gcr.io/sandbox-for-isaiah/express-example-api:latest
-          imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              memory: "1Gi"
+              cpu: "1"
+            limits:
+              memory: "2Gi"
+              cpu: "1.5"
+          env:
+            - name: ENVIRONMENT
+              value: dev
+            - name: APP_NAME
+              value: express-example
+          imagePullPolicy: Always
           name: express-example-api
           ports:
             - containerPort: 8080

@@ -1,0 +1,9 @@
+version: 0.0.1
+metadata:
+  code: EXPRESS-EXAMPLE
+  name: express-example
+  description: Express microservice example
+tests:
+  local:
+    port: "3000"
+    command: npm start

@@ -10,6 +10,8 @@ Test microservice using ExpressJS
 5. Navigate to the newly cloned repository
 6. Install dependencies with `npm install`
 7. Start the app with `npm run dev`
+8. Run the local test using the command `npm test`
+9. Run the Test Driven Happiness report using the command `npm happy`
 
 ## Building Docker & Running Image
 
@@ -22,7 +24,7 @@ Test microservice using ExpressJS
 
 Once you've either set yourself up for local development or
 started running a built docker image of the website use postman or CURL and run 
-GET request against the following endpoint: http://localhost:3000/v1/ping
+GET request against the following endpoint: http://localhost:3000/express-example/v1/ping
 
 ## Notes
 ### Hot Reload with Nodemon
